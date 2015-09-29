@@ -1,0 +1,23 @@
+{
+  "name": "PROXIED_DEVICES",
+  "pid": 16,
+  "version": 1,
+  "get_request": {
+    "fields": []
+  },
+  "get_response": {
+    "fields": [
+      {
+        "name": "devices",
+        "type": "group",
+        "fields": [
+          {
+            "name": "uid",
+            "type": "uid"
+          }
+        ]
+      }
+    ]
+  },
+  "get_subdevice_range": 2
+}

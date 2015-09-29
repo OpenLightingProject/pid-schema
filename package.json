@@ -1,0 +1,12 @@
+{
+  "name": "rdm-pid-schema",
+  "version": "0.0.1",
+  "description": "RDM PID Schema",
+  "author": "Simon Newton <nomis52@gmail.com>",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-tv4": "^0.4.1",
+    "tv4": "^1.2.7"
+  }
+}

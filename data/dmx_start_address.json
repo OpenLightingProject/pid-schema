@@ -1,0 +1,53 @@
+{
+  "name": "DMX_START_ADDRESS",
+  "pid": 240,
+  "version": 1,
+  "get_request": {
+    "fields": []
+  },
+  "get_response": {
+    "fields": [
+      {
+        "name": "start_address",
+        "type": "uint16",
+        "ranges": [
+          {
+            "lower": 0,
+            "upper": 512
+          }
+        ],
+        "labels": [
+          {
+            "label": "No footprint",
+            "value": 65535
+          }
+        ]
+      }
+    ]
+  },
+  "get_subdevice_range": 2,
+  "set_request": {
+    "fields": [
+      {
+        "name": "start_address",
+        "type": "uint16",
+        "ranges": [
+          {
+            "lower": 0,
+            "upper": 512
+          }
+        ],
+        "labels": [
+          {
+            "label": "No footprint",
+            "value": 65535
+          }
+        ]
+      }
+    ]
+  },
+  "set_response": {
+    "fields": []
+  },
+  "set_subdevice_range": 3
+}

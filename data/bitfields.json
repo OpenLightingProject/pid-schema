@@ -1,0 +1,23 @@
+{
+  "name": "PROXIED_DEVICES",
+  "pid": 16,
+  "version": 1,
+  "get_request": {
+    "fields": []
+  },
+  "get_response": {
+    "fields": [
+      {
+        "type": "bitfield",
+        "size": 8,
+        "bits": [
+          {
+            "index": 0,
+            "name": "foo"
+          }
+        ]
+      }
+    ]
+  },
+  "get_subdevice_range": 0
+}

@@ -1,0 +1,39 @@
+{
+  "name": "DEVICE_INFO",
+  "pid": 96,
+  "version": 1,
+  "get_request": {
+    "fields": []
+  },
+  "get_response": {
+    "fields": [
+      {"name": "protocol_major", "type": "uint8"},
+      {"name": "protocol_minor", "type": "uint8"},
+      {"name": "device_model", "type": "uint16"},
+      {"name": "product_category", "type": "uint16"},
+      {"name": "software_version", "type": "uint32"},
+      {
+        "name": "dmx_footprint",
+        "type": "uint16",
+        "ranges": [
+          {
+            "lower": 0,
+            "upper": 512
+          }
+        ],
+        "labels": [
+          {
+            "label": "No footprint",
+            "value": 65535
+          }
+        ]
+      },
+      {"name": "current_personality", "type": "uint8"},
+      {"name": "personality_count", "type": "uint8"},
+      {"name": "dmx_start_address", "type": "uint16"},
+      {"name": "sub_device_count", "type": "uint16"},
+      {"name": "sensor_count", "type": "uint8"}
+    ]
+  },
+  "get_subdevice_range": 2
+}
