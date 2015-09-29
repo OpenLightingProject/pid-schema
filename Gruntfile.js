@@ -23,6 +23,6 @@ module.exports = function(grunt) {
   });
   grunt.loadNpmTasks("grunt-tv4");
   grunt.loadNpmTasks("grunt-contrib-jshint");
-  grunt.registerTask("default", ["tv4"]);
+  grunt.registerTask("default", ["jshint:dev", "tv4"]);
   grunt.registerTask("lint", ["jshint:dev"]);
 };
