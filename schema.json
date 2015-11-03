@@ -126,6 +126,17 @@
         {
           "properties": {
             "type": {
+              "enum": ["mac"]
+            },
+            "name": {
+              "$ref": "#/definitions/name"
+            }
+          },
+          "required": ["name", "type"]
+        },
+        {
+          "properties": {
+            "type": {
               "enum": ["uid"]
             },
             "name": {
