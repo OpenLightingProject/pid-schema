@@ -1,5 +1,7 @@
 # RDM Parameter ID Schema
 
+[![Build Status](https://travis-ci.org/OpenLightingProject/pid-schema.svg?branch=master)](https://travis-ci.org/OpenLightingProject/pid-schema)
+
 This repo contains a [JSON Schema](www.json-schema.org) for RDM Parameter Descriptions.
 
 The schema provided is on track to be included in ANSI E1.37-5.
