@@ -3,6 +3,39 @@ language: node_js
 node_js:
  - stable
 
+cache:
+  directories:
+    - $HOME/.npm
+
+before_install:
+  - if [[ "$TASK" == "spellintian" ]]; then sudo add-apt-repository ppa:waja/trusty-backports -y; sudo apt-get update -qq; sudo apt-get install lintian -y; fi # Install a late enough lintian
+
 install:
-  - npm install -g grunt-cli
-  - npm install
+  - if [ "$TASK" = "codespell" ]; then npm install -g grunt-cli; fi
+  - if [ "$TASK" = "npm-test" ]; then npm install; fi
+  - if [ "$TASK" = "codespell" ]; then pip install git+https://github.com/codespell-project/codespell.git; fi
+
+matrix:
+  fast_finish: true
+  include:
+    - env: TASK="npm-test"
+    - os: linux
+      dist: trusty
+      # Short duration job, would use the container/without sudo image as it boots faster, but we need a backported lintian, so don't
+      sudo: required
+      env: TASK='spellintian'
+      addons:
+        apt:
+          packages:
+            - moreutils
+    - os: linux
+      dist: trusty
+      # Short duration job, use the container/without sudo image as it boots faster
+      sudo: false
+      env: TASK='codespell'
+      addons:
+        apt:
+          packages:
+           - moreutils
+
+script: "bash -ex .travis-ci.sh"
