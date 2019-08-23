@@ -36,4 +36,7 @@ elif [[ $TASK = 'codespell' ]]; then
   else
     echo "Found $spellingerrors spelling errors via codespell"
   fi;
+elif [[ $TASK = 'jsonschemalinter' ]]; then
+  # run jsonschemalinter only if it is the requested task
+  curl -X POST https://www.json-schema-linter.com/api/jsonschemalinter/analyze -H "Content-Type: application/json" --data-binary "@schema.json"
 fi

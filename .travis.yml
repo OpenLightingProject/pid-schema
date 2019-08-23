@@ -38,5 +38,6 @@ matrix:
         apt:
           packages:
            - moreutils
+    - env: TASK="jsonschemalinter"
 
 script: "bash -ex .travis-ci.sh"
