@@ -12,6 +12,7 @@ module.exports = function(grunt) {
       },
       tests: {
         files: {
+          expand: true,
           "schema.json": "data/*.json"
         }
       }
