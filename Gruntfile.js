@@ -7,14 +7,14 @@ module.exports = function(grunt) {
       },
       schema: {
         files: [{
-          src: 'schema.json',
-        }],
+          src: "schema.json"
+        }]
       },
       tests: {
         files: {
-          'schema.json': 'data/*.json',
-        },
-      },
+          "schema.json": "data/*.json"
+        }
+      }
     },
     jshint: {
       dev: [
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
       }
     }
   });
-  grunt.loadNpmTasks('grunt-jsonschema-ajv');
+  grunt.loadNpmTasks("grunt-jsonschema-ajv");
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.registerTask("default", ["jshint:dev", "jsonschema"]);
   grunt.registerTask("lint", ["jshint:dev"]);
