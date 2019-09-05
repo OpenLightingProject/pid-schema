@@ -7,7 +7,9 @@ module.exports = function(grunt) {
           strictKeywords: true
         },
         expand: true,
-        "schema.json": ["data/*.json"]
+        files: {
+          "schema.json": ["data/*.json"]
+        }
       }
     },
     jshint: {
