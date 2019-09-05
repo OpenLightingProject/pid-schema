@@ -4,6 +4,7 @@ module.exports = function(grunt) {
     jsonschema: {
       tests: {
         options: {
+          strictDefaults: true,
           strictKeywords: true
         },
         expand: true,
