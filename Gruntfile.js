@@ -1,13 +1,16 @@
 module.exports = function(grunt) {
   "use strict";
   grunt.initConfig({
-    tv4: {
-      options: {
-        root: grunt.file.readJSON("schema.json"),
-        banUnknownProperties: true
-      },
-      myTarget: {
-        src: ["data/*.json"]
+    jsonschema: {
+      tests: {
+        options: {
+          strictDefaults: true,
+          strictKeywords: true
+        },
+        expand: true,
+        files: {
+          "schema.json": ["data/*.json"]
+        }
       }
     },
     jshint: {
@@ -21,8 +24,8 @@ module.exports = function(grunt) {
       }
     }
   });
-  grunt.loadNpmTasks("grunt-tv4");
+  grunt.loadNpmTasks("grunt-jsonschema-ajv");
   grunt.loadNpmTasks("grunt-contrib-jshint");
-  grunt.registerTask("default", ["jshint:dev", "tv4"]);
+  grunt.registerTask("default", ["jshint:dev", "jsonschema:tests"]);
   grunt.registerTask("lint", ["jshint:dev"]);
 };
