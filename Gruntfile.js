@@ -6,10 +6,8 @@ module.exports = function(grunt) {
         options: {
           strictKeywords: true
         },
-        files: {
-          expand: true,
-          "schema.json": ["data/bitfields.json"]
-        }
+        expand: true,
+        "schema.json": ["data/bitfields.json"]
       }
     },
     jshint: {
