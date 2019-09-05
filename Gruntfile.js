@@ -2,15 +2,10 @@ module.exports = function(grunt) {
   "use strict";
   grunt.initConfig({
     jsonschema: {
-      options: {
-        strictKeywords: true
-      },
-      schema: {
-        files: [{
-          src: "schema.json"
-        }]
-      },
       tests: {
+        options: {
+          strictKeywords: true
+        },
         files: {
           expand: true,
           "schema.json": ["data/bitfields.json"]
@@ -30,6 +25,6 @@ module.exports = function(grunt) {
   });
   grunt.loadNpmTasks("grunt-jsonschema-ajv");
   grunt.loadNpmTasks("grunt-contrib-jshint");
-  grunt.registerTask("default", ["jshint:dev", "jsonschema"]);
+  grunt.registerTask("default", ["jshint:dev", "jsonschema:tests"]);
   grunt.registerTask("lint", ["jshint:dev"]);
 };
